@@ -14,15 +14,15 @@ datasets/[Project_ID]/teatA
 datasets/[Project_ID]/teatB
 ### 1.3 Demo Introduction
 RUN 'python s3_Classification/code/test.py --dataroot s3_Classification/datasets/sample --checkpoints_dir s3_Classification/checkpoints --results_dir s3_Classification/results/sample --name sample -d PA_VHE  --multi_network basic -m test --gpus 0 -f --select_feat 0 1 2 3 4 5'
-- Virtual staining results (with saliency mask)
--- results/.../test_latest/images/fake_B
--- results/.../test_latest/images/fake_B_sig
+- Virtual staining results (with saliency mask)  
+-- results/.../test_latest/images/fake_B  
+-- results/.../test_latest/images/fake_B_sig  
 - Input PAH (with saliency mask)
--- results/.../test_latest/images/real_A
--- results/.../test_latest/images/real_A_sig
+-- results/.../test_latest/images/real_A  
+-- results/.../test_latest/images/real_A_sig  
 - GT H&E (with saliency mask)
--- results/.../test_latest/images/real_B
--- results/.../test_latest/images/real_B_sig
+-- results/.../test_latest/images/real_B  
+-- results/.../test_latest/images/real_B_sig  
 
 ## Step 2. Segmentation
 ### 2.1 Package Installation
