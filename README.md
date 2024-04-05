@@ -17,10 +17,10 @@ RUN 'python s3_Classification/code/test.py --dataroot s3_Classification/datasets
 - Virtual staining results (with saliency mask)  
 -- results/.../test_latest/images/fake_B  
 -- results/.../test_latest/images/fake_B_sig  
-- Input PAH (with saliency mask)
+- Input PAH (with saliency mask)  
 -- results/.../test_latest/images/real_A  
 -- results/.../test_latest/images/real_A_sig  
-- GT H&E (with saliency mask)
+- GT H&E (with saliency mask)  
 -- results/.../test_latest/images/real_B  
 -- results/.../test_latest/images/real_B_sig  
 
