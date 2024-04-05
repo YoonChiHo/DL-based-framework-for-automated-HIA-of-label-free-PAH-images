@@ -14,6 +14,15 @@ datasets/[Project_ID]/teatA
 datasets/[Project_ID]/teatB
 ### 1.3 Demo Introduction
 RUN 'python s3_Classification/code/test.py --dataroot s3_Classification/datasets/sample --checkpoints_dir s3_Classification/checkpoints --results_dir s3_Classification/results/sample --name sample -d PA_VHE  --multi_network basic -m test --gpus 0 -f --select_feat 0 1 2 3 4 5'
+- Virtual staining results (with saliency mask)
+results/.../test_latest/images/fake_B
+results/.../test_latest/images/fake_B_sig
+- Input PAH (with saliency mask)
+results/.../test_latest/images/real_A
+results/.../test_latest/images/real_A_sig
+- GT H&E (with saliency mask)
+results/.../test_latest/images/real_B
+results/.../test_latest/images/real_B_sig
 
 ## Step 2. Segmentation
 ### 2.1 Package Installation
@@ -32,8 +41,9 @@ datasets/[Project_ID]/PA
 datasets/[Project_ID]/VHE
 ### 2.3 Demo Introduction
 RUN 'python s1_VirtualStain/code/test.py --dataroot s1_VirtualStain/datasets/sample --checkpoints_dir s1_VirtualStain/checkpoints --results_dir s1_VirtualStain/results/sample --name sample --saliency --CUT_mode CUT --load_size 512 --crop_size 512 --gpu_ids 0'
-
-
+- Segmentation results saved in [*_p.png] format at results folder
+- Cell area detection results (image) saved in [*_c.png] format at results folder
+- Cell area detection results (value) saved in [Anlaysis_results.txt] at results folder
 ## Step 3. Classification
 ### 3.1 Package Installation
 RUN 'pip install -r s3_Classification/code/requirements.txt'
@@ -50,3 +60,4 @@ datasets/[Project_ID]/VHE/Analysis_results.txt
 
 ### 3.3 Demo Introduction
 RUN 'python s2_Segmentation/code/test.py --dataroot s2_Segmentation/datasets/sample --checkpoints_dir s2_Segmentation/checkpoints --results_dir s2_Segmentation/results/sample --name sample --model unet --mode test --test_list PA HE VHE'
+- Classification results saved in [basic_result_history.csv] at results folder
