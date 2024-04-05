@@ -7,13 +7,15 @@ All the virtual staining, segmentation, and classification sequences were implem
 ## Step 1. Virtual Staining
 ### 1.1 Package Installation
 RUN 'pip install -r s1_VirtualStain/code/requirements.txt'
-### 1.2 Data Preparation
-datasets/[Project_ID]/trainA
-datasets/[Project_ID]/trainB
-datasets/[Project_ID]/teatA
-datasets/[Project_ID]/teatB
+### 1.2 Data Preparation  
+- datasets folder should be positioned at [s1_VirtualStain/datasets]  
+datasets/[Project_ID]/trainA  
+datasets/[Project_ID]/trainB  
+datasets/[Project_ID]/teatA  
+datasets/[Project_ID]/teatB  
 ### 1.3 Demo Introduction
 RUN 'python s3_Classification/code/test.py --dataroot s3_Classification/datasets/sample --checkpoints_dir s3_Classification/checkpoints --results_dir s3_Classification/results/sample --name sample -d PA_VHE  --multi_network basic -m test --gpus 0 -f --select_feat 0 1 2 3 4 5'
+- Results will be saved in [s1_VirtualStain/results]  
 - Virtual staining results (with saliency mask)  
 -- results/.../test_latest/images/fake_B  
 -- results/.../test_latest/images/fake_B_sig  
@@ -28,6 +30,7 @@ RUN 'python s3_Classification/code/test.py --dataroot s3_Classification/datasets
 ### 2.1 Package Installation
 RUN 'sh s2_Segmentation/code/requirements.sh'
 ### 2.2 Data Preparation
+- datasets folder should be positioned at [s2_Segmentation/datasets]  
 - Train dataset  
 A total of four datasets were used to train the segmentation model: CPM-15[1], CPM-17[1], Kumar[2], and TNBC[3].  
 
@@ -43,6 +46,7 @@ datasets/[Project_ID]/PA
 datasets/[Project_ID]/VHE  
 ### 2.3 Demo Introduction
 RUN 'python s1_VirtualStain/code/test.py --dataroot s1_VirtualStain/datasets/sample --checkpoints_dir s1_VirtualStain/checkpoints --results_dir s1_VirtualStain/results/sample --name sample --saliency --CUT_mode CUT --load_size 512 --crop_size 512 --gpu_ids 0'
+- Results will be saved in [s2_Segmentation/results]  
 - Segmentation results saved in [*_p.png] format at results folder
 - Cell area detection results (image) saved in [*_c.png] format at results folder
 - Cell area detection results (value) saved in [Anlaysis_results.txt] at results folder
@@ -50,6 +54,7 @@ RUN 'python s1_VirtualStain/code/test.py --dataroot s1_VirtualStain/datasets/sam
 ### 3.1 Package Installation
 RUN 'pip install -r s3_Classification/code/requirements.txt'
 ### 3.2 Data Preparation  
+- datasets folder should be positioned at [s3_Classification/datasets]  
 datasets/[Project_ID]/HE/train  
 datasets/[Project_ID]/HE/test  
 datasets/[Project_ID]/HE/Analysis_results.txt  
@@ -62,4 +67,5 @@ datasets/[Project_ID]/VHE/Analysis_results.txt
 
 ### 3.3 Demo Introduction
 RUN 'python s2_Segmentation/code/test.py --dataroot s2_Segmentation/datasets/sample --checkpoints_dir s2_Segmentation/checkpoints --results_dir s2_Segmentation/results/sample --name sample --model unet --mode test --test_list PA HE VHE'
+- Results will be saved in [s3_Classification/results]  
 - Classification results saved in [basic_result_history.csv] at results folder
