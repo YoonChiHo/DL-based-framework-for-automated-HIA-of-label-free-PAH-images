@@ -28,17 +28,19 @@ RUN 'python s3_Classification/code/test.py --dataroot s3_Classification/datasets
 ### 2.1 Package Installation
 RUN 'sh s2_Segmentation/code/requirements.sh'
 ### 2.2 Data Preparation
-A total of four datasets were used to train the segmentation model: CPM-15[1], CPM-17[1], Kumar[2], and TNBC[3].
+- Train dataset  
+A total of four datasets were used to train the segmentation model: CPM-15[1], CPM-17[1], Kumar[2], and TNBC[3].  
 
-[1] Vu, Q.D., et al. Methods for segmentation and classification of digital microscopy tissue images. Frontiers in bioengineering and biotechnology, 53 (2019).
-[2] Kumar, N., et al. A dataset and a technique for generalized nuclear segmentation for computational pathology. IEEE transactions on medical imaging 36, 1550-1560 (2017).
-[3] Naylor, P., Laé, M., Reyal, F. & Walter, T. Segmentation of nuclei in histopathology images by deep regression of the distance map. IEEE transactions on medical imaging 38, 448-459 (2018).
+[1] Vu, Q.D., et al. Methods for segmentation and classification of digital microscopy tissue images. Frontiers in bioengineering and biotechnology, 53 (2019).  
+[2] Kumar, N., et al. A dataset and a technique for generalized nuclear segmentation for computational pathology. IEEE transactions on medical imaging 36, 1550-1560 (2017).  
+[3] Naylor, P., Laé, M., Reyal, F. & Walter, T. Segmentation of nuclei in histopathology images by deep regression of the distance map. IEEE transactions on medical imaging 38, 448-459 (2018).  
 
-datasets/[Project_ID]/HEP/Image
-datasets/[Project_ID]/HEP/GT
-datasets/[Project_ID]/HE
-datasets/[Project_ID]/PA
-datasets/[Project_ID]/VHE
+- Test data should be positioned at,  
+datasets/[Project_ID]/HEP/Image  
+datasets/[Project_ID]/HEP/GT  
+datasets/[Project_ID]/HE  
+datasets/[Project_ID]/PA  
+datasets/[Project_ID]/VHE  
 ### 2.3 Demo Introduction
 RUN 'python s1_VirtualStain/code/test.py --dataroot s1_VirtualStain/datasets/sample --checkpoints_dir s1_VirtualStain/checkpoints --results_dir s1_VirtualStain/results/sample --name sample --saliency --CUT_mode CUT --load_size 512 --crop_size 512 --gpu_ids 0'
 - Segmentation results saved in [*_p.png] format at results folder
@@ -47,16 +49,16 @@ RUN 'python s1_VirtualStain/code/test.py --dataroot s1_VirtualStain/datasets/sam
 ## Step 3. Classification
 ### 3.1 Package Installation
 RUN 'pip install -r s3_Classification/code/requirements.txt'
-### 3.2 Data Preparation
-datasets/[Project_ID]/HE/train
-datasets/[Project_ID]/HE/test
-datasets/[Project_ID]/HE/Analysis_results.txt
-datasets/[Project_ID]/PA/train
-datasets/[Project_ID]/PA/test
-datasets/[Project_ID]/PA/Analysis_results.txt
-datasets/[Project_ID]/VHE/train
-datasets/[Project_ID]/VHE/test
-datasets/[Project_ID]/VHE/Analysis_results.txt
+### 3.2 Data Preparation  
+datasets/[Project_ID]/HE/train  
+datasets/[Project_ID]/HE/test  
+datasets/[Project_ID]/HE/Analysis_results.txt  
+datasets/[Project_ID]/PA/train  
+datasets/[Project_ID]/PA/test  
+datasets/[Project_ID]/PA/Analysis_results.txt  
+datasets/[Project_ID]/VHE/train  
+datasets/[Project_ID]/VHE/test  
+datasets/[Project_ID]/VHE/Analysis_results.txt  
 
 ### 3.3 Demo Introduction
 RUN 'python s2_Segmentation/code/test.py --dataroot s2_Segmentation/datasets/sample --checkpoints_dir s2_Segmentation/checkpoints --results_dir s2_Segmentation/results/sample --name sample --model unet --mode test --test_list PA HE VHE'
