@@ -5,7 +5,7 @@ The image pre-processing steps were implemented in MATLAB using R2021a (The Math
 All the virtual staining, segmentation, and classification sequences were implemented using Python, version 3.8.12, and Pytorch, version 1.11.0. We implemented this training and testing on a Linux system with one Nvidia GeForce RTX 3090 GPU, an AMD EPYC 7302 CPU, and 346GB of RAM.
 
 # Stepwise feature fusion (StepFF) system
-![Stepwise feature fusion (StepFF) system](fig/fig.png)
+![Stepwise feature fusion (StepFF) system](fig.png)
 
 ## Step 1. Virtual Staining
 ### 1.1 Package Installation
