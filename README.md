@@ -11,9 +11,8 @@ All the virtual staining, segmentation, and classification sequences were implem
 RUN sh code/requirements.sh
 
 ### Data Preparation  
-- datasets folder should be positioned at [s1_VirtualStain/datasets]  
-datasets/HE
-datasets/PAH
+- grayscale input data should be positioned in `datasets/PAH`  
+- color groundtruth data should be positioned in `datasets/HE`  
 
 ### Inference Code
 python code/test.py --name sample \
@@ -42,7 +41,7 @@ results will be saved in `results/s1_VirtualStain, s2_Segmentation, s3_Classific
 - Segmentation results saved in [*_p.png] format at `results/s2_Segmentation` folder
 - Cell area detection results (image) saved in [*_c.png] format at results folder
 - Cell area detection results (value) saved in [Anlaysis_results.txt] at results folder
-- 
+  
 ### Classification 
 - Classification results saved in `results/s3_Classification` folder
 - Classification results saved in [basic_result_history.csv] at results folder
